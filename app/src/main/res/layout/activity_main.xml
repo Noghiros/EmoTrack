@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <!-- Título -->
+        <TextView
+            android:id="@+id/tvTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/titulo_form"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:paddingBottom="8dp" />
+
+        <!-- Sentimentos -->
+        <TextView
+            android:id="@+id/tvSentimento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_sentimento" />
+
+        <RadioGroup
+            android:id="@+id/rgSentimento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="4dp"
+            android:paddingBottom="8dp">
+
+            <RadioButton
+                android:id="@+id/rbFeliz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sent_feliz" />
+
+            <RadioButton
+                android:id="@+id/rbTriste"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sent_triste" />
+
+            <RadioButton
+                android:id="@+id/rbAnsioso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sent_ansioso" />
+
+            <RadioButton
+                android:id="@+id/rbEstressado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sent_estressado" />
+
+            <RadioButton
+                android:id="@+id/rbCalmo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sent_calmo" />
+
+            <RadioButton
+                android:id="@+id/rbOutro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sent_outro" />
+
+        </RadioGroup>
+
+        <!-- Spinner -->
+
+        <TextView
+            android:id="@+id/tvFator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_fator" />
+
+        <Spinner
+            android:id="@+id/spFator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dropdown"
+            android:paddingBottom="8dp" />
+
+        <!-- CheckBox (Evento marcante) -->
+        <CheckBox
+            android:id="@+id/cbMarcante"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_evento_marcante"
+            android:paddingBottom="8dp" />
+
+        <!-- EditText -->
+        <TextView
+            android:id="@+id/tvObs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_observacoes" />
+
+        <EditText
+            android:id="@+id/etObservacoes"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:gravity="top|start"
+            android:hint="@string/hint_observacoes"
+            android:inputType="textMultiLine"
+            android:maxLines="6"
+            android:padding="8dp" />
+
+        <!-- Botões -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end"
+            android:paddingTop="16dp">
+
+            <Button
+                android:id="@+id/btnLimpar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_limpar" />
+
+            <Space
+                android:layout_width="12dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/btnSalvar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_salvar" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

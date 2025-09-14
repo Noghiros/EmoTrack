@@ -1,0 +1,36 @@
+<resources>
+    <!-- Nome do App -->
+    <string name="app_name">EmoTrack</string>
+
+    <!-- Título do formulário -->
+    <string name="titulo_form">EmoTrack</string>
+
+    <!-- Labels -->
+    <string name="label_sentimento">Como você está se sentindo?</string>
+    <string name="label_fator">Cenário:</string>
+    <string name="label_evento_marcante">Este foi um evento marcante?</string>
+    <string name="label_observacoes">Observações:</string>
+
+    <!-- Hint -->
+    <string name="hint_observacoes">Digite aqui suas observações...</string>
+
+    <!-- Sentimentos -->
+    <string name="sent_feliz">Feliz</string>
+    <string name="sent_triste">Triste</string>
+    <string name="sent_ansioso">Ansioso</string>
+    <string name="sent_estressado">Estressado</string>
+    <string name="sent_calmo">Calmo</string>
+    <string name="sent_outro">Outro</string>
+
+    <!-- Botões -->
+    <string name="btn_limpar">Limpar</string>
+    <string name="btn_salvar">Salvar</string>
+
+    <!-- Toasts -->
+    <string name="toast_salvo">Registro salvo com sucesso!</string>
+    <string name="toast_limpo">Formulário limpo!</string>
+    <string name="toast_erro_preenchimento">Por favor, preencha todos os campos obrigatórios.</string>
+    <string name="toast_erro_radio">Por favor, selecione um sentimento!</string>
+    <string name="toast_erro_obs">Por favor, preencha as observações!</string>
+
+</resources>
