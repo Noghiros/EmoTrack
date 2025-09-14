@@ -17,7 +17,7 @@ O app permite registrar como você está se sentindo em um determinado dia, asso
 
 ## 🛠️ Tecnologias
 
-- [Android Studio Narwhal 2025.1.1](https://developer.android.com/studio)
+- Android Studio Narwhal 2025.1.1
 - Linguagem: **Java**
 - Target SDK: **35 (Android 15.0)**
 - Minimum SDK: **24 (Android 7.0)**
