@@ -33,4 +33,60 @@
     <string name="toast_erro_radio">Por favor, selecione um sentimento!</string>
     <string name="toast_erro_obs">Por favor, preencha as observações!</string>
 
+    <!-- Nomes dos sentimentos -->
+    <string-array name="sentimentos_nomes">
+        <item>Feliz</item>
+        <item>Triste</item>
+        <item>Ansioso</item>
+        <item>Estressado</item>
+        <item>Calmo</item>
+        <item>Animado</item>
+        <item>Cansado</item>
+        <item>Motivado</item>
+        <item>Confuso</item>
+        <item>Outro</item>
+    </string-array>
+
+    <!-- Fatores -->
+    <string-array name="sentimentos_fatores">
+        <item>Família</item>
+        <item>Trabalho</item>
+        <item>Estudos</item>
+        <item>Saúde</item>
+        <item>Amigos</item>
+        <item>Lazer</item>
+        <item>Relacionamentos</item>
+        <item>Finanças</item>
+        <item>Ambiente</item>
+        <item>Clima</item>
+    </string-array>
+
+    <!-- Descrições -->
+    <string-array name="sentimentos_descricoes">
+        <item>Bolsonaro Preso</item>
+        <item>Escala 6x1 eu não tanko não</item>
+        <item>Quero meu diploma logo</item>
+        <item>De-Pressão</item>
+        <item>Jogo do Framengo com os guri e ouvir skylab</item>
+        <item>Entorpecido 🤠👍</item>
+        <item>5 anos de curso </item>
+        <item>Ganhei dinheiro no tigrinho, estoureiiii demais</item>
+        <item>Fazer o L ou a Arminha?</item>
+        <item>Falta de dinheiro 💸</item>
+    </string-array>
+
+    <!-- Intensidades -->
+    <integer-array name="sentimentos_intensidades">
+        <item>8</item>
+        <item>6</item>
+        <item>7</item>
+        <item>9</item>
+        <item>4</item>
+        <item>8</item>
+        <item>5</item>
+        <item>9</item>
+        <item>6</item>
+        <item>3</item>
+    </integer-array>
+
 </resources>
