@@ -22,4 +22,4 @@ O app permite registrar como você está se sentindo em um determinado dia, asso
 - Target SDK: **35 (Android 15.0)**
 - Minimum SDK: **24 (Android 7.0)**
 
-#### 📦 Versão 1.0
+#### 📦 Versão 1.1
