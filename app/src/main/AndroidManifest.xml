@@ -4,26 +4,22 @@
 
     <application
         android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher_emotrack"
         android:label="@string/app_name"
-        android:icon="@mipmap/ic_launcher"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher_emotrack_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Material3.DayNight.NoActionBar">
-
-        <!-- Tela da Entega 2 -->
-        <activity
-            android:name=".ListaSentimentos"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-        </activity>
-
-        <!-- Tela da Entrega 1 -->
+        android:theme="@style/Base.Theme.EmoTrack">
+        
+        <activity android:name=".SobreActivity" />
+        <activity android:name=".CadastroSentimentoActivity" />
         <activity
             android:name=".MainActivity"
-            android:exported="true" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

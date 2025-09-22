@@ -5,7 +5,7 @@
     android:padding="12dp">
 
     <TextView
-        android:id="@+id/txtSentimento"
+        android:id="@+id/txtNome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"

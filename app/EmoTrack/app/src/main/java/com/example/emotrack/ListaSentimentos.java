@@ -52,11 +52,14 @@ public class ListaSentimentos extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == REQUEST_CODE_CADASTRO && resultCode == RESULT_OK && data != null) {
-            Sentimento novo = (Sentimento) data.getSerializableExtra("sentimento");
-            if (novo != null) {
-                lista.add(novo);
-                adapter.notifyDataSetChanged();
-            }
+            String nome = data.getStringExtra("nome");
+            String fator = data.getStringExtra("fator");
+            boolean marcante = data.getBooleanExtra("marcante", false);
+            String observacoes = data.getStringExtra("observacoes");
+
+            Sentimento novo = new Sentimento(nome, fator, marcante, observacoes);
+            lista.add(novo);
+            adapter.notifyItemInserted(lista.size() - 1);
         }
     }
 }

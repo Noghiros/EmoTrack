@@ -1,94 +1,66 @@
 package com.example.emotrack;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.Spinner;
-import android.widget.Toast;
-import androidx.annotation.Nullable;
+
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private RadioGroup rgSentimento;
-    private Spinner spFator;
-    private CheckBox cbMarcante;
-    private EditText etObservacoes;
-    private Button btnSalvar, btnLimpar;
+    private RecyclerView recyclerView;
+    private SentimentoAdapter adapter;
+    private ArrayList<Sentimento> listaSentimentos;
+
+    private Button btnAdicionar, btnSobre;
+
+    // Launcher para abrir CadastroSentimentoActivity e receber o resultado
+    private final ActivityResultLauncher<Intent> launcherCadastro =
+            registerForActivityResult(
+                    new ActivityResultContracts.StartActivityForResult(),
+                    result -> {
+                        if (result.getResultCode() == RESULT_OK && result.getData() != null) {
+                            Sentimento novo = (Sentimento) result.getData().getSerializableExtra("sentimento");
+                            if (novo != null) {
+                                listaSentimentos.add(novo);
+                                adapter.notifyItemInserted(listaSentimentos.size() - 1);
+                            }
+                        }
+                    });
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_lista_sentimentos);
 
-        rgSentimento = findViewById(R.id.rgSentimento);
-        spFator = findViewById(R.id.spFator);
-        cbMarcante = findViewById(R.id.cbMarcante);
-        etObservacoes = findViewById(R.id.etObservacoes);
-        btnSalvar = findViewById(R.id.btnSalvar);
-        btnLimpar = findViewById(R.id.btnLimpar);
+        // Inicializa lista e adapter
+        listaSentimentos = new ArrayList<>();
+        adapter = new SentimentoAdapter(listaSentimentos);
 
-        // Adapter do Spinner
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-                this,
-                R.array.array_fatores,
-                android.R.layout.simple_spinner_item
-        );
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spFator.setAdapter(adapter);
+        // Configura RecyclerView
+        recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
 
-        btnLimpar.setOnClickListener(v -> limparFormulario());
+        // Botões
+        btnAdicionar = findViewById(R.id.btnAdicionar);
+        btnSobre = findViewById(R.id.btnSobre);
 
-        btnSalvar.setOnClickListener(v -> salvarRegistro());
-    }
+        // Ações
+        btnAdicionar.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, CadastroSentimentoActivity.class);
+            launcherCadastro.launch(intent);
+        });
 
-    private void limparFormulario() {
-        rgSentimento.clearCheck();
-        spFator.setSelection(0); // "Selecione…"
-        cbMarcante.setChecked(false);
-        etObservacoes.setText("");
-        etObservacoes.clearFocus();
-
-        Toast.makeText(this, getString(R.string.toast_limpo), Toast.LENGTH_SHORT).show();
-    }
-
-    private void salvarRegistro() {
-        // RadioGroup
-        int checkedId = rgSentimento.getCheckedRadioButtonId();
-        if (checkedId == -1) {
-            Toast.makeText(this, getString(R.string.toast_erro_radio), Toast.LENGTH_SHORT).show();
-            // retorna o foco lógico ao grupo (foco de acessibilidade)
-            rgSentimento.requestFocus();
-            return;
-        }
-
-        // EditText
-        String obs = etObservacoes.getText().toString().trim();
-        if (obs.isEmpty()) {
-            Toast.makeText(this, getString(R.string.toast_erro_obs), Toast.LENGTH_SHORT).show();
-            etObservacoes.requestFocus();
-            etObservacoes.setError(getString(R.string.toast_erro_obs));
-            return;
-        }
-
-        // Coleta de valores
-        RadioButton rbSelecionado = findViewById(checkedId);
-        String sentimento = rbSelecionado.getText().toString();
-
-        String fator = spFator.getSelectedItem() != null
-                ? spFator.getSelectedItem().toString()
-                : "";
-
-        boolean marcante = cbMarcante.isChecked();
-
-        // Toast curto
-        String mensagem = getString(R.string.toast_salvo) + " | " + sentimento + " | " + fator + " | " + (marcante ? "Marcante" : "Comum");
-
-        Toast.makeText(this, mensagem, Toast.LENGTH_SHORT).show();
-
+        btnSobre.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, SobreActivity.class);
+            startActivity(intent);
+        });
     }
 }

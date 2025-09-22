@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">EmoTrack</string>
+    <string name="titulo_form">Cadastro de Sentimentos</string>
+    <string name="label_sentimento">Sentimento:</string>
+    <string name="label_fator">Fator:</string>
+    <string name="label_evento_marcante">Foi um momento marcante?</string>
+    <string name="label_observacoes">Observações:</string>
+    <string name="hint_observacoes">Digite suas observações aqui...</string>
+    <string name="btn_limpar">Limpar</string>
+    <string name="btn_adicionar">Adicionar</string>
+    <string name="btn_sobre">Sobre</string>
+    <string name="sent_feliz">Feliz</string>
+    <string name="sent_triste">Triste</string>
+    <string name="sent_ansioso">Ansioso</string>
+    <string name="sent_estressado">Estressado</string>
+    <string name="sent_calmo">Calmo</string>
+    <string name="sent_outro">Outro</string>
+    <string name="sobre_titulo">Sobre o Autor</string>
+    <string name="sobre_descricao">EmoTrack ajuda a registrar sentimentos, associar fatores e acompanhar seu histórico pessoal.</string>
+    <string name="autor_nome">Stefano Calheiros Stringhini</string>
+    <string name="autor_curso">Engenharia de Computação</string>
+    <string name="autor_email">stefanoc.stringhini@alunos.utfpr.edu.br</string>
+</resources>

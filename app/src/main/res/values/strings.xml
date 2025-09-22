@@ -32,6 +32,8 @@
     <string name="toast_erro_preenchimento">Por favor, preencha todos os campos obrigatórios.</string>
     <string name="toast_erro_radio">Por favor, selecione um sentimento!</string>
     <string name="toast_erro_obs">Por favor, preencha as observações!</string>
+    <string name="autoria">Autor: Stefano Calheiros Stringhini</string>
+    <string name="Email">Email: stefanoc.stringhini@gmail.com</string>
 
     <!-- Nomes dos sentimentos -->
     <string-array name="sentimentos_nomes">

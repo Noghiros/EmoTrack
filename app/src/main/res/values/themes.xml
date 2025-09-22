@@ -1,9 +1,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.EmoTrack" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.EmoTrack" parent="Theme.Material3.Light">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/azulroyal</item>
+        <item name="colorPrimaryVariant">@color/azulmarinho</item>
+        <item name="colorOnPrimary">@color/branco</item>
+
     </style>
 
-    <style name="Theme.EmoTrack" parent="Base.Theme.EmoTrack" />
 </resources>
