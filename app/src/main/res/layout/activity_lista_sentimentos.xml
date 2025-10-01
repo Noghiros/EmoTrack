@@ -1,33 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:padding="8dp"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <LinearLayout
+        android:id="@+id/headerLayout"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal">
+        android:padding="16dp">
 
-        <Button
-            android:id="@+id/btnAdicionar"
+        <TextView
+            android:id="@+id/tvHistoricoTitulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="70dp"
-            android:text="Adicionar" />
+            android:text="Histórico de Sentimentos"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:paddingBottom="8dp"/>
 
-        <Button
-            android:id="@+id/btnSobre"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sobre" />
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp"/>
-</LinearLayout>
+        android:layout_marginTop="100dp"/>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

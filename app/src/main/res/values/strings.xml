@@ -91,4 +91,8 @@
         <item>3</item>
     </integer-array>
 
+    <string name="marcante">Marcante</string>
+    <string name="selecione_sentimento">Selecione um sentimento!</string>
+    <string name="preencha_obs">Preencha as observações!</string>
+    <string name="form_limpo">Formulário limpo!</string>
 </resources>

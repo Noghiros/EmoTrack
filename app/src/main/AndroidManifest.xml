@@ -11,10 +11,10 @@
         android:theme="@style/Base.Theme.EmoTrack">
         
         <activity android:name=".SobreActivity" />
+
         <activity android:name=".CadastroSentimentoActivity" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
+
+        <activity android:name=".MainActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
