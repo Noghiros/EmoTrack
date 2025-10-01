@@ -1,29 +1,41 @@
 # 📱 EmoTrack
 
-EmoTrack é um aplicativo Android simples para **controle de sentimentos diários**, desenvolvido como projeto acadêmico da disciplina de Programação Mobile.
-
+EmoTrack é um aplicativo Android desenvolvido em **Java** no **Android Studio Narwhal 2025.1.1**, voltado para o registro e acompanhamento de sentimentos. Desenvolvido como projeto acadêmico da disciplina de Programação Mobile.
 O app permite registrar como você está se sentindo em um determinado dia, associar fatores externos, marcar eventos importantes e adicionar observações.  
 
 ---
 
 ## 🚀 Funcionalidades
 
-Atualmente, o EmoTrack oferece as seguintes funcionalidades:
-
 *   **Tela Principal (`MainActivity`):**
-    *   Interface inicial do aplicativo, provavelmente com opções para visualizar sentimentos ou adicionar novos.
+    *   Exibe os sentimentos cadastrados em uma **RecyclerView**.
+    *   Inclui um **menu de opções** na barra superior:
+        *   `Adicionar` → abre a tela de cadastro de sentimentos, aguardando retorno.
+        *   `Sobre` → abre a tela com informações sobre a autoria do app.
+    *   Implementa um **menu de ação contextual** (ao manter pressionado um item da lista):
+        *   `Editar` → abre a tela de cadastro já preenchida, permitindo alterações.
+        *   `Excluir` → remove o item selecionado da lista e atualiza a RecyclerView.
+
 *   **Cadastro de Sentimentos (`CadastroSentimentoActivity`):**
-    *   Permite ao usuário registrar um novo sentimento.
-    *   Seleção de um **nome/título** para o sentimento.
-    *   Escolha de um **fator** associado (ex: Trabalho, Estudos, Família, Amigos, Saúde, Lazer, Outro).
-    *   Opção para marcar o sentimento como **"Marcante"** ou "Comum".
-    *   Campo para adicionar **observações** textuais detalhadas sobre o sentimento.
+    *   Permite ao usuário registrar ou editar um sentimento.
+    *   Campos disponíveis:
+        *   **Nome/Título** do sentimento.
+        *   **Fator associado** (ex: Trabalho, Estudos, Família, Amigos, Saúde, Lazer, Outro).
+        *   **Marcante** (checkbox).
+        *   **Observações** detalhadas.
+    *   Inclui um **menu de opções**:
+        *   `Salvar` → valida os dados e retorna à listagem com resultado **RESULT_OK**.
+        *   `Limpar` → apaga os campos preenchidos e exibe um **Toast** de confirmação.
+    *   Possui botão **Up** na barra de navegação para retornar à lista sem salvar.
+
 *   **Listagem de Sentimentos (`ListaSentimentos` e `SentimentoAdapter`):**
-    *   Exibe uma lista com todos os sentimentos previamente cadastrados.
-    *   Cada item da lista mostra os detalhes do sentimento (nome, fator, se é marcante, observações).
-    *   Permite interagir com os itens da lista (atualmente, um clique exibe um Toast com o nome do sentimento).
+    *   Mostra todos os sentimentos cadastrados com detalhes (nome, fator, marcante, observações).
+    *   Interação direta com cada item (edição e exclusão via menu contextual).
+
 *   **Visualização de Informações Adicionais (`SobreActivity`):**
-    *   Tela destinada a exibir informações sobre o aplicativo ou seus desenvolvedores.
+    *   Tela destinada a exibir informações sobre o aplicativo e sua autoria.
+    *   Inclui botão **Up** para retornar à lista.
+
 
 ## 🏗️ Estrutura do Projeto (Principais Classes)
 
@@ -43,4 +55,4 @@ Atualmente, o EmoTrack oferece as seguintes funcionalidades:
 - Target SDK: **35 (Android 15.0)**
 - Minimum SDK: **24 (Android 7.0)**
 
-#### 📦 Versão 1.2
+#### 📦 Versão 0.4
