@@ -49,7 +49,6 @@ public class ListaSentimentos extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
     }
 
-    // método auxiliar para abrir cadastro (opcional)
     public void abrirCadastroSentimento() {
         Intent intent = new Intent(this, CadastroSentimentoActivity.class);
         launcherNovoCadastro.launch(intent);

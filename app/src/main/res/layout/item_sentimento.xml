@@ -9,7 +9,7 @@
         android:id="@+id/txtSentimento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sentimento: "
+        android:text="@string/sentimento"
         android:textStyle="bold"
         android:textSize="16sp"/>
 
@@ -17,14 +17,14 @@
         android:id="@+id/txtFator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Situação: "
+        android:text="@string/cenario"
         android:textSize="15sp"/>
 
     <TextView
         android:id="@+id/txtMarcante"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Marcante"
+        android:text="@string/marcante"
         android:textSize="14sp"
         android:textColor="#d32f2f"/>
 
@@ -32,7 +32,7 @@
         android:id="@+id/txtObs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Observação: "
+        android:text="Obs:"
         android:textSize="15sp"/>
 
     <TextView

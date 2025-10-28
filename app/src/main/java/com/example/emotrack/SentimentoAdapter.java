@@ -1,8 +1,8 @@
 package com.example.emotrack;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -37,12 +37,27 @@ public class SentimentoAdapter extends RecyclerView.Adapter<SentimentoAdapter.Vi
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Sentimento s = lista.get(position);
-        holder.txtSentimento.setText("Sentimento: " + s.getNome());
-        holder.txtFator.setText("Situação: " + s.getFator());
-        holder.txtMarcante.setText(s.isMarcante() ? "Marcante" : "");
-        holder.txtObs.setText("Observação: " + s.getObservacoes());
-        holder.txtDataHora.setText("Registrado em: " + s.getDataHora());
+        Sentimento sentimento = lista.get(position);
+
+        // Use o contexto para obter as strings
+        Context context = holder.itemView.getContext();
+
+        // Combine as strings do resources com os dados do sentimento
+        holder.txtSentimento.setText(String.format("%s: %s",
+                context.getString(R.string.sentimento),
+                sentimento.getNome()));
+
+        holder.txtDataHora.setText(String.format("%s: %s",
+                context.getString(R.string.data_hora),
+                sentimento.getDataFormatada()));
+
+        holder.txtFator.setText(String.format("%s: %s",
+                context.getString(R.string.label_fator),
+                sentimento.getFator()));
+
+        holder.txtObs.setText(String.format("%s: %s",
+                context.getString(R.string.label_observacoes),
+                sentimento.getObservacoes()));
 
         holder.itemView.setOnLongClickListener(v -> {
             v.showContextMenu();

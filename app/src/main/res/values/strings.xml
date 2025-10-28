@@ -1,98 +1,59 @@
 <resources>
-    <!-- Nome do App -->
-    <string name="app_name">EmoTrack</string>
+    <!-- App Name -->
+    <string name="app_name" translatable="false">EmoTrack</string>
 
-    <!-- Título do formulário -->
-    <string name="titulo_form">EmoTrack</string>
+    <!-- Form Title -->
+    <string name="titulo_form" translatable="false">EmoTrack</string>
 
     <!-- Labels -->
-    <string name="label_sentimento">Como você está se sentindo?</string>
-    <string name="label_fator">Cenário:</string>
-    <string name="label_evento_marcante">Este foi um evento marcante?</string>
-    <string name="label_observacoes">Observações:</string>
+    <string name="label_sentimento">How are you feeling?</string>
+    <string name="label_fator">Scenario:</string>
+    <string name="label_evento_marcante">Was this a significant event?</string>
+    <string name="label_observacoes">Notes:</string>
 
     <!-- Hint -->
-    <string name="hint_observacoes">Digite aqui suas observações...</string>
+    <string name="hint_observacoes">Type your notes here...</string>
 
-    <!-- Sentimentos -->
-    <string name="sent_feliz">Feliz</string>
-    <string name="sent_triste">Triste</string>
-    <string name="sent_ansioso">Ansioso</string>
-    <string name="sent_estressado">Estressado</string>
-    <string name="sent_calmo">Calmo</string>
-    <string name="sent_outro">Outro</string>
+    <!-- Feelings (individual strings) -->
+    <string name="sent_feliz">Happy</string>
+    <string name="sent_triste">Sad</string>
+    <string name="sent_ansioso">Anxious</string>
+    <string name="sent_estressado">Stressed</string>
+    <string name="sent_calmo">Calm</string>
+    <string name="sent_outro">Other</string>
 
-    <!-- Botões -->
-    <string name="btn_limpar">Limpar</string>
-    <string name="btn_salvar">Salvar</string>
+    <!-- Buttons -->
+    <string name="btn_limpar">Clear</string>
+    <string name="btn_salvar">Save</string>
 
     <!-- Toasts -->
-    <string name="toast_salvo">Registro salvo com sucesso!</string>
-    <string name="toast_limpo">Formulário limpo!</string>
-    <string name="toast_erro_preenchimento">Por favor, preencha todos os campos obrigatórios.</string>
-    <string name="toast_erro_radio">Por favor, selecione um sentimento!</string>
-    <string name="toast_erro_obs">Por favor, preencha as observações!</string>
-    <string name="autoria">Autor: Stefano Calheiros Stringhini</string>
-    <string name="Email">Email: stefanoc.stringhini@gmail.com</string>
+    <string name="toast_salvo">Record saved successfully!</string>
+    <string name="toast_limpo">Form cleared!</string>
+    <string name="toast_erro_preenchimento">Please fill in all required fields.</string>
+    <string name="toast_erro_radio">Please select a feeling!</string>
+    <string name="toast_erro_obs">Please fill in the notes!</string>
+    <string name="autoria">Author: Stefano Calheiros Stringhini</string>
+    <string name="Email" translatable="false">Email: stefanoc.stringhini@gmail.com</string>
+    <string name="curso">Bachelor of Computer Engineering</string>
+    <string name="descricao">EmoTrack helps you record feelings, associate factors, and track your personal history.</string>
 
-    <!-- Nomes dos sentimentos -->
-    <string-array name="sentimentos_nomes">
-        <item>Feliz</item>
-        <item>Triste</item>
-        <item>Ansioso</item>
-        <item>Estressado</item>
-        <item>Calmo</item>
-        <item>Animado</item>
-        <item>Cansado</item>
-        <item>Motivado</item>
-        <item>Confuso</item>
-        <item>Outro</item>
-    </string-array>
 
-    <!-- Fatores -->
-    <string-array name="sentimentos_fatores">
-        <item>Família</item>
-        <item>Trabalho</item>
-        <item>Estudos</item>
-        <item>Saúde</item>
-        <item>Amigos</item>
-        <item>Lazer</item>
-        <item>Relacionamentos</item>
-        <item>Finanças</item>
-        <item>Ambiente</item>
-        <item>Clima</item>
-    </string-array>
+    <!-- Other UI strings -->
+    <string name="marcante">Significant</string>
+    <string name="selecione_sentimento">Select a feeling!</string>
+    <string name="preencha_obs">Fill in the notes!</string>
+    <string name="form_limpo">Form cleared!</string>
+    <string name="sugerir_tipo">Suggest same scenario</string>
+    <string name="Historico">History of Feelings</string>
+    <string name="sobre">About</string>
+    <string name="sentimento"> Feeling</string>
+    <string name="cenario"> Scenario</string>"
+    <string name="registro"> Registered</string>
+    <string name="data_hora"> Date and Time </string>
 
-    <!-- Descrições -->
-    <string-array name="sentimentos_descricoes">
-        <item>Bolsonaro Preso</item>
-        <item>Escala 6x1 eu não tanko não</item>
-        <item>Quero meu diploma logo</item>
-        <item>De-Pressão</item>
-        <item>Jogo do Framengo com os guri e ouvir skylab</item>
-        <item>Entorpecido 🤠👍</item>
-        <item>5 anos de curso </item>
-        <item>Ganhei dinheiro no tigrinho, estoureiiii demais</item>
-        <item>Fazer o L ou a Arminha?</item>
-        <item>Falta de dinheiro 💸</item>
-    </string-array>
+    <string name="ordenar_nome">Order by Name</string>
+    <string name="ordenar_data">Order by Date</string>
 
-    <!-- Intensidades -->
-    <integer-array name="sentimentos_intensidades">
-        <item>8</item>
-        <item>6</item>
-        <item>7</item>
-        <item>9</item>
-        <item>4</item>
-        <item>8</item>
-        <item>5</item>
-        <item>9</item>
-        <item>6</item>
-        <item>3</item>
-    </integer-array>
 
-    <string name="marcante">Marcante</string>
-    <string name="selecione_sentimento">Selecione um sentimento!</string>
-    <string name="preencha_obs">Preencha as observações!</string>
-    <string name="form_limpo">Formulário limpo!</string>
+
 </resources>

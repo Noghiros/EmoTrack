@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"/>
 
     <TextView
-        android:text="Aluno: Stefano Calheiros Stringhini"
+        android:text="@string/autoria"
         android:layout_marginTop="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
@@ -31,7 +31,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Curso: Engenharia de Computação" />
+        android:text="@string/curso" />
 
     <TextView
         android:text="E-mail: stefanoc.stringhini@alunos.utfpr.edu.br"
@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"/>
 
     <TextView
-        android:text="EmoTrack ajuda a registrar sentimentos, associar fatores e acompanhar seu histórico pessoal."
+        android:text="@string/descricao"
         android:layout_marginTop="16dp"
         android:gravity="center"
         android:layout_width="match_parent"

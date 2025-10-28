@@ -11,4 +11,8 @@
         android:title="Limpar"
         android:icon="@android:drawable/ic_menu_close_clear_cancel"
         app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/menuItemSugerirTipo"
+        android:checkable="true"
+        android:title="@string/sugerir_tipo" />
 </menu>

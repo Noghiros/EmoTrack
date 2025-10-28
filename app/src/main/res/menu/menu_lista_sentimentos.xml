@@ -7,12 +7,19 @@
         android:icon="@android:drawable/ic_input_add"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/menu_ordenar"
-        android:title="Ordenar"
-        android:icon="@android:drawable/ic_menu_sort_alphabetically"
+        android:id="@+id/menu_ordenar_nome"
+        android:title="@string/ordenar_nome"
+        android:icon="@drawable/ic_action_name_ascending_order"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/menu_ordenar_data"
+        android:icon="@android:drawable/ic_menu_today"
+        android:title="@string/ordenar_data"
         app:showAsAction="ifRoom" />
+
     <item
         android:id="@+id/menu_sobre"
-        android:title="Sobre"
+        android:title="@string/sobre"
         app:showAsAction="never" />
 </menu>
