@@ -17,6 +17,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.emotrack.utilis.UtilisAlert;
+
 import java.util.Date;
 
 public class CadastroSentimentoActivity extends AppCompatActivity {
@@ -104,7 +106,7 @@ public class CadastroSentimentoActivity extends AppCompatActivity {
         if (id == R.id.menu_salvar) {
             int sel = rgSentimento.getCheckedRadioButtonId();
             if (sel == -1) {
-                Toast.makeText(this, R.string.selecione_sentimento, Toast.LENGTH_SHORT).show();
+                UtilisAlert.mostrarAviso(this, R.string.selecione_sentimento);
                 return true;
             }
             RadioButton rb = findViewById(sel);
@@ -117,7 +119,7 @@ public class CadastroSentimentoActivity extends AppCompatActivity {
             salvarUltimoTipo(tipoFator);
 
             if (obs.isEmpty()) {
-                Toast.makeText(this, R.string.preencha_obs, Toast.LENGTH_SHORT).show();
+                UtilisAlert.mostrarAviso(this,  R.string.preencha_obs);
                 return true;
             }
             long dataHora = new Date().getTime();

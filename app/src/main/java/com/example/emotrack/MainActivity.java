@@ -1,5 +1,6 @@
 package com.example.emotrack;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -7,6 +8,7 @@ import android.view.ActionMode;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
@@ -14,6 +16,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.emotrack.utilis.UtilisAlert;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -76,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
             public void onEditar(int position) {
                 // A lógica de edição foi movida para o clique longo
             }
+
             @Override
             public void onExcluir(int position) {
                 // A lógica de exclusão foi movida para o clique longo
@@ -106,19 +111,30 @@ public class MainActivity extends AppCompatActivity {
         public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
             if (selectedPosition == -1) return false;
             int itemId = item.getItemId();
+
             if (itemId == R.id.menu_editar) {
-                Sentimento s = lista.get(selectedPosition);
+                Sentimento S = lista.get(selectedPosition);
                 Intent it = new Intent(MainActivity.this, CadastroSentimentoActivity.class);
-                it.putExtra("sentimento", s);
+                it.putExtra("sentimento", S);
                 it.putExtra("position", selectedPosition);
                 launcher.launch(it);
                 mode.finish();
                 return true;
             } else if (itemId == R.id.menu_excluir) {
-                lista.remove(selectedPosition);
-                adapter.notifyItemRemoved(selectedPosition);
-                mode.finish();
-                return true;
+                Sentimento S = lista.get(selectedPosition);
+                String mensagem = getString(R.string.confirmacao_exclusao) + S.getNome() + "\"";
+
+                DialogInterface.OnClickListener listenerSim = new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int which) {
+                        lista.remove(selectedPosition);
+                        adapter.notifyItemRemoved(selectedPosition);
+                        actionMode.finish();
+                    }
+                };
+                UtilisAlert.confirmarAcao(MainActivity.this, mensagem, listenerSim, null);
+
             }
             return false;
         }
@@ -146,6 +162,9 @@ public class MainActivity extends AppCompatActivity {
         } else if (id == R.id.menu_sobre) {
             startActivity(new Intent(this, SobreActivity.class));
             return true;
+        } else if (id == R.id.MenuItemRestaurar) {
+            confirmarRestaurarPadroes();
+
         } else if (id == R.id.menu_ordenar_nome) {
             // Inverte a ordem atual
             ordenacaoNomeAsc = !ordenacaoNomeAsc;
@@ -258,5 +277,27 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return true;
+    }
+
+    private void confirmarRestaurarPadroes() {
+
+        DialogInterface.OnClickListener listenerSim = new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                SharedPreferences shared = getSharedPreferences(ARQUIVO_PREFERENCIAS, MODE_PRIVATE);
+                SharedPreferences.Editor editor = shared.edit();
+
+                editor.clear();
+                editor.commit();
+                ordenacaoNomeAsc = true;
+
+                Toast.makeText(MainActivity.this, R.string.msg_config_padrao, Toast.LENGTH_SHORT).show();
+
+            }
+        };
+        UtilisAlert.confirmarAcao(MainActivity.this, getString(R.string.deseja_voltar_padroes),listenerSim,null);
+
+
     }
 }

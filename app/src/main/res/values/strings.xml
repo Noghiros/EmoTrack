@@ -53,7 +53,15 @@
 
     <string name="ordenar_nome">Order by Name</string>
     <string name="ordenar_data">Order by Date</string>
-
+    <string name="aviso">Warning</string>
+    <string name="ok">Ok</string>
+    <string name="não">No</string>
+    <string name="sim">Yes</string>
+    <string name="confirmacao">Confirm</string>
+    <string name="confirmacao_exclusao">Do you want to delete? </string>
+    <string name="restaurar_padroes">Restore Defaults</string>
+    <string name="msg_config_padrao">The settings have reverted to the default installation settings. </string>
+    <string name="deseja_voltar_padroes">Do you want to revert to the defaults? </string>
 
 
 </resources>

@@ -19,6 +19,9 @@
         app:showAsAction="ifRoom" />
 
     <item
+        android:id="@+id/MenuItemRestaurar"
+        android:title="@string/restaurar_padroes" />
+    <item
         android:id="@+id/menu_sobre"
         android:title="@string/sobre"
         app:showAsAction="never" />

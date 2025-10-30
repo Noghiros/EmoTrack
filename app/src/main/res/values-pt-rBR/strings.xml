@@ -54,5 +54,15 @@
 
     <string name="ordenar_nome">Ordenar por Nome</string>
     <string name="ordenar_data">Ordenar por Data</string>
+    <string name="aviso">Aviso</string>
+    <string name="ok">Ok</string>
+    <string name="não">Não</string>
+    <string name="sim">Sim</string>
+    <string name="confirmacao">Confirmar</string>
+    <string name="confirmacao_exclusao">Você quer deletar? </string>
+    <string name="restaurar_padroes">Restaurar Padrões</string>
+    <string name="msg_config_padrao">As configurações voltaram para o padrão de instalação</string>
+    <string name="deseja_voltar_padroes">Deseja voltar aos padrões?</string>
+
 
 </resources>
